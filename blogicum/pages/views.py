@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+
 def about(request):
     template_name = 'pages/about.html'
     title = 'О проекте'
@@ -7,6 +8,7 @@ def about(request):
         'title': title
     }
     return render(request, template_name, context)
+
 
 def rules(request):
     template_name = 'pages/rules.html'

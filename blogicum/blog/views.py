@@ -43,6 +43,7 @@ posts = [
     },
 ]
 
+
 def index(request):
     template_name = 'blog/index.html'
     title = 'Лента записей'
@@ -52,6 +53,7 @@ def index(request):
     }
     return render(request, template_name, context)
 
+
 def post_detail(request, id: int):
     template_name = 'blog/detail.html'
     title = 'Формируется из локации и даты'
@@ -60,6 +62,7 @@ def post_detail(request, id: int):
         'post': posts[id]
     }
     return render(request, template_name, context)
+
 
 def category_posts(request, category_slug: str):
     template_name = 'blog/category.html'
