@@ -10,6 +10,6 @@ urlpatterns = [
     path(
         'category/<slug:category_slug>/',
         views.category_posts,
-        name='category'
+        name='category_posts'
     ),
 ]
