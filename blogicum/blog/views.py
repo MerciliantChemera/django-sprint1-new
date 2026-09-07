@@ -49,7 +49,7 @@ def index(request):
     title = 'Лента записей'
     context = {
         'title': title,
-        'posts': posts
+        'posts': posts.__reversed__()
     }
     return render(request, template_name, context)
 
@@ -67,11 +67,7 @@ def post_detail(request, id: int):
 def category_posts(request, category_slug: str):
     template_name = 'blog/category.html'
     title = 'Публикации в категории ' + category_slug
-    filtered_posts = [
-        post for post in posts if post['category'] == category_slug
-    ]
     context = {
         'title': title,
-        'posts': filtered_posts
     }
     return render(request, template_name, context)
