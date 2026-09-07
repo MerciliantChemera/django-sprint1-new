@@ -55,6 +55,9 @@ def index(request):
 
 
 def post_detail(request, id: int):
+    if id > len(posts) - 1:
+        return render(request, '404.html', status=404)
+
     template_name = 'blog/detail.html'
     title = 'Формируется из локации и даты'
     context = {
